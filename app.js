@@ -10,7 +10,7 @@ function isLocalStorageSupported() {
   $(document).ready(function () {
     loadTasks();
   });
-  
+
   function loadTasks() {
     if (isLocalStorageSupported()) {
       var tasks = JSON.parse(localStorage.getItem('tasks')) || [];
@@ -23,6 +23,7 @@ function isLocalStorageSupported() {
   function saveTasks(tasks) {
     if (isLocalStorageSupported()) {
       localStorage.setItem('tasks', JSON.stringify(tasks));
+      console.log(tasks);
     }
   }
 
